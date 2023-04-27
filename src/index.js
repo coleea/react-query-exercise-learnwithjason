@@ -33,7 +33,7 @@ export default function App() {
                 path="/"
                 element={
                   <>
-                    <h1>Welcome!</h1>
+                    <h1 align="center">Welcome!</h1>
                   </>
                 }
               />
