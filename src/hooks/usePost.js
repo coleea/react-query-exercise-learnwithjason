@@ -12,7 +12,8 @@ export default function usePost(postId) {
     {
       // options  
       initialData: () => queryCache.getQueryData('posts')?.find(d => d.id == postId),
-      initialStale: true
+      initialStale: true,
+      // suspense : true,
     }
   )
 }

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.29.5",
     "axios": "^0.20.0",
     "fs-extra": "^9.0.1",
     "history": "^5.0.0",
