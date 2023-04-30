@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
-//
-
 import usePost from '../../hooks/usePost'
 import useSavePost from '../../hooks/useSavePost'
 import useDeletePost from '../../hooks/useDeletePost'
@@ -12,6 +10,7 @@ import PostForm from '../../components/PostForm'
 import { Loader } from '../../components/styled'
 
 export default function Post() {
+
   const { postId } = useParams()
   const navigate = useNavigate()
 
@@ -34,6 +33,15 @@ export default function Post() {
     await deleteQueryFunc(postId)
     // await deletePost(postId)
     navigate('/admin')
+  }
+
+  console.log("postQuery.status");
+  console.log(postQuery.status);
+
+  if(postQuery.isLoading === "error"){ 
+    return <>
+      <h1>ERROR</h1>
+    </>
   }
 
   return (
@@ -61,7 +69,6 @@ export default function Post() {
                 : 'Save Post'
             }
           />
-
           <p>
             <button onClick={onDelete}>
               {
